@@ -41,7 +41,6 @@ $(document).ready(function(){
 	\*------------------------------------*/
 	if( $(".maxwidth1050").css("display") == "none" )
 	{
-		$(".content").css( "top", $(window).height() );
 		$(".hero").css( "height", $(window).height() );
 	}
 
@@ -49,7 +48,6 @@ $(document).ready(function(){
 	{
 		var HeroHeight = $(".hero__content").height() + $(".experience__hollow-arrow").height();
 		$(".hero").css( "height", HeroHeight );
-		$(".content").css( "top", 0 );
 	}
 
 	ShowcaseHeightSet();
@@ -58,7 +56,6 @@ $(document).ready(function(){
 	$(window).resize(function(event){
 		if( $(".maxwidth1050").css("display") == "none" )
 		{
-			$(".content").css( "top", $(window).height() );
 			$(".hero").css( "height", $(window).height() );
 		}
 
@@ -66,7 +63,6 @@ $(document).ready(function(){
 		{
 			var HeroHeight = $(".hero__content").height() + $(".experience__hollow-arrow").height();
 			$(".hero").css( "height", HeroHeight );
-			$(".content").css( "top", 0 );
 		}
 
 		ShowcaseHeightSet();
