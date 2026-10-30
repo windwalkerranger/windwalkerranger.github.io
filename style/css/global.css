@@ -2959,4 +2959,78 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   }
 }
 
+/*------------------------------------*    Portfolio layout
+\*------------------------------------*/
+.realizations__wrapper {
+  padding-top: 72px;
+}
+
+.realizations .section-header__title {
+  font-size: 28px;
+  padding-left: 44px;
+  background-size: 28px 28px;
+  background-position: 6px top;
+}
+
+.realizations .section-header__subtitle {
+  font-size: 15px;
+  padding-left: 44px;
+}
+
+.realizations .showcase {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: clamp(64px, 8vw, 92px) minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+}
+
+.realizations .showcase__thumbnails-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: auto;
+  margin-bottom: 0;
+}
+
+.realizations .showcase__thumb {
+  float: none;
+  flex: 0 0 clamp(64px, 8vw, 92px);
+  width: clamp(64px, 8vw, 92px);
+  margin-left: 0;
+}
+
+.realizations .showcase__slider {
+  float: none;
+  width: 100%;
+}
+
+.realizations .showcase__stage-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+.realizations .showcase__stage {
+  width: 100%;
+}
+
+.realizations .showcase__infos-wrapper {
+  float: none;
+  clear: both;
+  width: 100%;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.realizations .showcase__title,
+.realizations .showcase__point {
+  padding-left: 0;
+}
+
+.realizations .showcase__button {
+  margin-left: 0;
+}
+
 /*# sourceMappingURL=global.css.map */
