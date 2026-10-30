@@ -54,6 +54,15 @@
 		padding-top: 110px;
 		padding-bottom: 200px;
 	}
+
+		.experience__group-title {
+			margin-top: 45px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid rgba(255,255,255,0.12);
+			color: rgba(255,255,255,0.9);
+			font-size: 20px;
+			font-weight: 500;
+		}
 	
 
 		.experience__icons-wrapper {
@@ -70,18 +79,25 @@
 			.experience__icon {
 				//cursor: default;
 				position: relative;
-				margin-top: 100px;
+				margin-top: 55px;
 				float: left;
 				width: 20%;
-				height: 120px;
+				height: 60px;
 				background-image: url("../img/exp_html5.svg");
-				background-size: 100px 100px;
+				background-size: 50px 50px;
 				background-position: 50%;
+				transition: background-size 160ms ease-in-out;
+
+				&:hover {
+					background-size: 70px 70px;
+				}
 				//filter: drop-shadow(0 0 7px rgba(0,0,0,0.2));
 
 				&--html5 { background-image: url("../img/exp/exp_html5.svg"); }
 				&--css3 { background-image: url("../img/exp/exp_css3.svg"); }
 				&--javascript { background-image: url("../img/exp/exp_javascript.svg"); }
+				&--typescript { background-image: url("../img/exp/exp_typescript.svg"); }
+				&--odin { background-image: url("../img/exp/exp_odin.svg"); }
 				&--sass { background-image: url("../img/exp/exp_unity"); }
 				&--jquery { background-image: url("../img/exp/exp_jquery.svg"); }
 				&--wordpress { background-image: url("../img/exp/exp_wordpress.svg"); }

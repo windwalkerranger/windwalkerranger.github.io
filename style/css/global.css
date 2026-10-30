@@ -1022,6 +1022,15 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   padding-bottom: 200px;
 }
 
+.experience__group-title {
+  margin-top: 45px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .experience__icons-wrapper {
   margin-bottom: 20px;
 }
@@ -1034,13 +1043,18 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 
 .experience__icon {
   position: relative;
-  margin-top: 100px;
+  margin-top: 55px;
   float: left;
   width: 20%;
-  height: 120px;
+  height: 60px;
   background-image: url("../img/exp_html5.svg");
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-position: 50%;
+  transition: background-size 160ms ease-in-out;
+}
+
+.experience__icon:hover {
+  background-size: 70px 70px;
 }
 
 .experience__icon--html5 {
@@ -1053,6 +1067,14 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 
 .experience__icon--javascript {
   background-image: url("../img/exp/exp_javascript.svg");
+}
+
+.experience__icon--typescript {
+  background-image: url("../img/exp/exp_typescript.svg");
+}
+
+.experience__icon--odin {
+  background-image: url("../img/exp/exp_odin.svg");
 }
 
 .experience__icon--unity {
@@ -2963,16 +2985,23 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 \*------------------------------------*/
 .realizations__wrapper {
   padding-top: 72px;
+  padding-bottom: 55px;
 }
 
-.realizations .section-header__title {
+.experience__wrapper {
+  padding-top: 55px;
+}
+
+.realizations .section-header__title,
+.experience .section-header__title {
   font-size: 28px;
   padding-left: 44px;
   background-size: 28px 28px;
   background-position: 6px top;
 }
 
-.realizations .section-header__subtitle {
+.realizations .section-header__subtitle,
+.experience .section-header__subtitle {
   font-size: 15px;
   padding-left: 44px;
 }
@@ -3014,6 +3043,19 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 
 .realizations .showcase__stage {
   width: 100%;
+}
+
+.realizations .showcase__video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.realizations .showcase__video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .realizations .showcase__infos-wrapper {
