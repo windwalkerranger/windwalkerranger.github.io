@@ -230,6 +230,16 @@ $(document).ready(function(){
 			$(".showcase__stage").fadeOut(400).removeClass("showcase__stage--active");
 			$(".showcase__stage[data-project='" + ProjectNumber + "']").fadeIn(400).addClass("showcase__stage--active");
 
+			// Only load the game while its project is selected. Leaving resets the
+			// current round and releases the browser's graphics and audio resources.
+			var ModecsFrame = $("#modecs-game");
+			if(ProjectNumber === "p5") {
+				ModecsFrame.attr("src", ModecsFrame.attr("data-src"));
+			}
+			else if(ModecsFrame.attr("src")) {
+				ModecsFrame.attr("src", "about:blank");
+			}
+
 			//details
 			$(".showcase__point-details-full").css("display","none");
 			$(".showcase__ellipsis, .showcase__readmore").css("display","inline");

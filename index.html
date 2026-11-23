@@ -335,7 +335,7 @@
 						<img data-project="p2" class="showcase__thumb" src="content/mobilegames.png">
 						<img data-project="p3" class="showcase__thumb" src="content/academics.png">
 						<img data-project="p4" class="showcase__thumb" src="content/100cubes.png">
-						<!--<img data-project="p5" class="showcase__thumb" src="content/project_placeholder_thumb.jpg">-->
+						<button type="button" data-project="p5" class="showcase__thumb showcase__thumb--modecs" aria-label="MODECS: playable Odin ECS demo">MODECS<span>Odin ECS</span></button>
 
 						<!-- blank template
 						<div data-project="p5" class="showcase__thumb  showcase__thumb--blank">&nbsp;</div>
@@ -511,43 +511,40 @@
 							</div>
 						</div>
 
-						<!-- project 5 -->
+						<!-- project 5: MODECS -->
 						<div data-project="p5" class="showcase__stage">
-							<div class="showcase__slider">
-								<ul class="rslides">
-									<li><img src="content/project_placeholder_slide.jpg"></li>
-									<li><img src="content/project_placeholder_slide.jpg"></li>
-									<li><img src="content/project_placeholder_slide.jpg"></li>
-									<li><img src="content/project_placeholder_slide.jpg"></li>
-								</ul>
-							</div>
-							<div class="showcase__infos-wrapper">
-								<div class="showcase__title">Fifth Project</div>
-								<div class="showcase__point">
-									<div class="showcase__point-title">Section Title</div>
-									<div class="showcase__point-description">
-										Design and Front-End Development
-									</div>
-								</div>
-								<div class="showcase__point">
-									<div class="showcase__point-title">Section Title</div>
-									<div class="showcase__point-description">
-										HTML, CSS, SASS, JavaScript, jQuery
-									</div>
-								</div>
-								<div class="showcase__point">
-									<div class="showcase__point-title">Section Title</div>
-									<div class="showcase__point-details-excerpt">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip<span class="showcase__ellipsis">...</span>
-										<span class="showcase__readmore">more</span>
-									</div>
-									<div class="showcase__point-details-full">
-										ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-										<span class="showcase__readless">less</span>
-									</div>
-								</div>
-								<a target="_blank" href="//example.com" class="showcase__button  ghost-button  ghost-button--realizations">Visit Website</a>
-							</div>
+						    <div class="showcase__game">
+						        <iframe id="modecs-game" data-src="games/modecs/?embed=1" title="MODECS playable ECS demo" allow="autoplay; fullscreen" allowfullscreen></iframe>
+						    </div>
+						    <p class="showcase__game-help">Mouse to move. Dodge red balls and eat blue food. Your personal best is saved in this browser. <a href="games/modecs/" target="_blank" rel="noopener" class="highlight-link">Open game in a new tab</a>.</p>
+						    <div class="showcase__infos-wrapper">
+						        <div class="showcase__title">MODECS <span class="showcase__title-description">An ECS library written in Odin</span></div>
+						        <div class="showcase__point">
+						            <div class="showcase__point-title">The project</div>
+						            <div class="showcase__point-description">
+						                MODECS is an Entity Component System (ECS) library I wrote in the Odin programming language to explore data-oriented game development. The playable demo above uses it for movement, collisions, food collection and timed effects. The library handles entity identities and component storage; each game defines its own components, systems and execution order.
+						            </div>
+						        </div>
+						        <div class="showcase__point">
+						            <div class="showcase__point-title">How the ECS works</div>
+						            <div class="showcase__point-description">
+						                Entities are lightweight handles with an index and generation counter, so an old handle can be distinguished from a new entity reusing the same index. Components are plain data stored in generic sparse-set pools: dense arrays keep active data together, while a sparse array maps entity indices to their component slots. Components can be added and removed at runtime, with swap-removal keeping the dense arrays packed.
+						            </div>
+						        </div>
+						        <div class="showcase__point">
+						            <div class="showcase__point-title">Systems and lifecycle</div>
+						            <div class="showcase__point-description">
+						                Systems are ordinary procedures called in an explicit order from the game loop. A movement system, for example, iterates Velocity components and looks up Position components for the same entities. Destruction can be marked during updates and processed afterward, removing components before recycling the entity's index.
+						            </div>
+						        </div>
+						        <div class="showcase__point">
+						            <div class="showcase__point-title">Running on this website</div>
+						            <div class="showcase__point-description">
+						                The Odin game is compiled to WebAssembly and linked with raylib using Emscripten. raylib supplies graphics, input and audio, with WebGL rendering the game in the browser. A small HTML and JavaScript page schedules frames and saves the personal best using localStorage. The game is embedded here and served as static files through GitHub Pages, without a game server.
+						            </div>
+						        </div>
+						        <a target="_blank" rel="noopener" href="https://github.com/windwalkerranger/Modecs" class="showcase__button ghost-button ghost-button--realizations">View Source on GitHub</a>
+						    </div>
 						</div>
 
 
