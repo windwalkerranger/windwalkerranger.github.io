@@ -18,56 +18,15 @@
 	Document Ready
 \*------------------------------------*/
 
-var TaptapPlayer;
-
-function PauseTaptapVideo() {
-	if(TaptapPlayer && typeof TaptapPlayer.pauseVideo === "function") {
-		try {
-			TaptapPlayer.pauseVideo();
-		}
-		catch(error) {
-			// The player may still be initializing.
-		}
-	}
-}
-
-function onYouTubeIframeAPIReady() {
-	TaptapPlayer = new YT.Player("taptap-video-player", {
-		events: {
-			"onReady": function(event) {
-				event.target.setVolume(50);
-			}
-		}
-	});
-}
-
-(function LoadYouTubeIframeAPI() {
-	var tag = document.createElement("script");
-	tag.src = "https://www.youtube.com/iframe_api";
-	var firstScriptTag = document.getElementsByTagName("script")[0];
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-})();
-
-document.addEventListener("visibilitychange", function() {
-	if(document.hidden) {
-		PauseTaptapVideo();
-	}
-});
-
-window.addEventListener("blur", PauseTaptapVideo);
-
 $(document).ready(function(){
 
 	/*------------------------------------*\
 		FUNCTION ShowcaseHeightSet()
-		Set '.showcase__stage-wrapper'
-		height the same as
-		'.showcase__stage--active'
-		(which is positioned absolutely
-		and doesn't fill wrapper)
+		Keep the tiled portfolio wrapper
+		at its natural content height.
 	\*------------------------------------*/
 	function ShowcaseHeightSet() {
-		$(".showcase__stage-wrapper").css("height", $(".showcase__stage--active").height() );
+		$(".showcase__stage-wrapper").css("height", "auto");
 	}
 
 
@@ -191,13 +150,13 @@ $(document).ready(function(){
 	\*------------------------------------*/
 	//responsive slides set
 	var slides_settings = {
-		auto: false,             // Boolean: Keep manually selected slides in place
+		auto: true,              // Boolean: Rotate project images automatically
 		speed: 500,              // Integer: Speed of the transition, in milliseconds
-		timeout: 8000,           // Integer: Time between slide transitions, in milliseconds
+		timeout: 4000,           // Integer: Time between slide transitions, in milliseconds
 		pager: true,             // Boolean: Show pager, true or false
 		nav: false,              // Boolean: Show navigation, true or false
 		random: false,           // Boolean: Randomize the order of the slides, true or false
-		pause: false,            // Boolean: Pause on hover, true or false
+		pause: false,            // Boolean: Keep rotating while hovered
 		pauseControls: true,     // Boolean: Pause when hovering controls, true or false
 		prevText: " ",           // String: Text for the "previous" button
 		nextText: " ",           // String: Text for the "next" button
@@ -208,13 +167,16 @@ $(document).ready(function(){
 		before: function(){},    // Function: Before callback
 		after: function(){}      // Function: After callback
 	}
-	$(".rslides").responsiveSlides(slides_settings);
+	$(".rslides").each(function(index) {
+		var Slider = $(this);
+		setTimeout(function() {
+			Slider.responsiveSlides(slides_settings);
+		}, index * 500);
+	});
 
 
 	//thumb navigation
 	$(".showcase__thumb").click(function(event) {
-		PauseTaptapVideo();
-
 		if( $(this).hasClass("showcase__thumb--blank") || $(this).hasClass("showcase__thumb--active") ) {
 			0;
 		}
@@ -249,12 +211,6 @@ $(document).ready(function(){
 		//set showcase section height
 		ShowcaseHeightSet();
 	});
-
-	$(document).on("click", ".rslides_tabs a", PauseTaptapVideo);
-
-
-
-
 
 	/*------------------------------------*\
 		Project details 'read more'

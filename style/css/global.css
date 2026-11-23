@@ -3008,24 +3008,11 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 
 .realizations .showcase {
   margin-top: 28px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  row-gap: 24px;
-  align-items: start;
+  display: block;
 }
 
 .realizations .showcase__thumbnails-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, clamp(48px, 6vw, 64px));
-  gap: 10px;
-  width: max-content;
-  margin-bottom: 0;
-}
-
-.realizations .showcase__thumb {
-  float: none;
-  width: clamp(48px, 6vw, 64px);
-  margin-left: 0;
+  display: none;
 }
 
 .realizations .showcase__slider {
@@ -3034,12 +3021,33 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 }
 
 .realizations .showcase__stage-wrapper {
+  position: relative;
   min-width: 0;
+  min-height: 0;
   width: 100%;
+  height: auto !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px 28px;
+  align-items: start;
 }
 
 .realizations .showcase__stage {
+  position: relative;
+  top: auto;
+  left: auto;
+  float: none;
+  display: block !important;
   width: 100%;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  background: rgba(8, 18, 28, 0.22);
+  align-self: start;
+}
+
+.realizations .showcase__stage[data-project="p5"] {
+  grid-column: 1 / -1;
 }
 
 .realizations .showcase__video {
@@ -3059,13 +3067,27 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   float: none;
   clear: both;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 34px;
   text-align: left;
 }
 
-.realizations .showcase__title,
+.realizations .showcase__title {
+  padding-left: 0;
+  font-size: 26px;
+}
+
 .realizations .showcase__point {
   padding-left: 0;
+}
+
+.realizations .showcase__point-title {
+  font-size: 18px;
+}
+
+.realizations .showcase__point-description,
+.realizations .showcase__point-details-excerpt,
+.realizations .showcase__point-details-full {
+  font-size: 15px;
 }
 
 .realizations .showcase__button {
@@ -3118,6 +3140,20 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   margin: 14px 0 0;
   font-size: 14px;
   line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.realizations .showcase__game-help a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 800px) {
+  .realizations .showcase__stage-wrapper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .realizations .showcase__stage[data-project="p5"] {
+    grid-column: auto;
+  }
 }
 
 /*# sourceMappingURL=global.css.map */
