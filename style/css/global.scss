@@ -215,6 +215,22 @@
 		}
 	}
 
+	.realizations .showcase__stage[data-project="p4"] .rslides {
+		aspect-ratio: 16 / 9;
+		background: rgba(0,0,0,0.18);
+	}
+
+	.realizations .showcase__stage[data-project="p4"] .rslides li {
+		height: 100%;
+	}
+
+	.realizations .showcase__stage[data-project="p4"] .rslides img {
+		float: none;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
 	.realizations .showcase__infos-wrapper {
 		float: none;
 		clear: both;
@@ -278,7 +294,8 @@
 }
 
 .realizations .showcase__game {
-  width: 100%;
+  width: 67%;
+  margin: 0 auto;
   aspect-ratio: 5 / 3;
   overflow: hidden;
   border-radius: 3px;
@@ -293,7 +310,8 @@
 }
 
 .realizations .showcase__game-help {
-  margin: 14px 0 0;
+  width: 67%;
+  margin: 14px auto 0;
   font-size: 14px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
@@ -310,6 +328,11 @@
 
   .realizations .showcase__stage[data-project="p5"] {
     grid-column: auto;
+  }
+
+  .realizations .showcase__game,
+  .realizations .showcase__game-help {
+    width: 100%;
   }
 }
 
