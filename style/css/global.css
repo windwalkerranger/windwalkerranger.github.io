@@ -3130,9 +3130,14 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 }
 
 .realizations .showcase__credit-link {
-  color: inherit;
+  color: #7ddcff;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.realizations .showcase__credit-link:hover,
+.realizations .showcase__credit-link:focus {
+  color: #c7f1ff;
 }
 
 .realizations .showcase__button {

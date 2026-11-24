@@ -282,9 +282,14 @@
 	}
 
 	.realizations .showcase__credit-link {
-		color: inherit;
+		color: #7ddcff;
 		text-decoration: underline;
 		text-underline-offset: 2px;
+	}
+
+	.realizations .showcase__credit-link:hover,
+	.realizations .showcase__credit-link:focus {
+		color: #c7f1ff;
 	}
 
 	.realizations .showcase__button {
