@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Games | Ahmet Mete ÇOM</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../style/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../style/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="../style/fonts/webfont-raleway/webfont-raleway.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <nav class="project-nav"><a href="../index.html#realizations">← Portfolio</a><a href="../index.html">Ahmet Mete ÇOM</a></nav>
+  <main class="project-page">
+    <header><p class="project-kicker">Portfolio</p><h1>Mobile Games</h1><p class="project-lead">I was the lead developer of more than 60 games we developed for major publishers, working in development, CPI tests, retention tests, soft launches, and releases.</p></header>
+    <section class="project-media project-media--videos project-media--featured" aria-label="Featured mobile games">
+      <figure><video muted loop playsinline preload="metadata" aria-label="Foxy Archer gameplay"><source src="../content/MobileGames/foxy-archer.mp4" type="video/mp4"></video><figcaption>Foxy Archer</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Tiny Race 3D gameplay"><source src="../content/MobileGames/tiny-race-3d.mp4" type="video/mp4"></video><figcaption>Tiny Race 3D</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Jellyrix gameplay"><source src="../content/MobileGames/jellyrix.mp4" type="video/mp4"></video><figcaption>Jellyrix</figcaption></figure>
+    </section>
+    <section class="project-copy"><h2>Development</h2><p>My work spans rapid prototypes and production-ready games, with a focus on fast iteration, measurable results, and reliable delivery.</p><h2>Tools</h2><p>I developed tools including FOMOTEM and GRIDRIG to shorten production and iteration cycles.</p></section>
+    <section class="project-copy project-copy--gallery-heading"><h2>More projects</h2></section>
+    <section class="project-media project-media--videos" aria-label="More mobile game projects">
+      <figure><video muted loop playsinline preload="metadata" aria-label="Block Magnet 3D gameplay"><source src="../content/MobileGames/block-magnet-3d.mp4" type="video/mp4"></video><figcaption>Block Magnet 3D</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Boat Parking 3D gameplay"><source src="../content/MobileGames/boat-parking-3d.mp4" type="video/mp4"></video><figcaption>Boat Parking 3D</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Canal Clicker gameplay"><source src="../content/MobileGames/canal-clicker.mp4" type="video/mp4"></video><figcaption>Canal Clicker</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Cart Match gameplay"><source src="../content/MobileGames/cart-match.mp4" type="video/mp4"></video><figcaption>Cart Match</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Cheerleader Clicker gameplay"><source src="../content/MobileGames/cheerleader-clicker.mp4" type="video/mp4"></video><figcaption>Cheerleader Clicker</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Chicken Factory Idle gameplay"><source src="../content/MobileGames/chicken-factory-idle.mp4" type="video/mp4"></video><figcaption>Chicken Factory Idle</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Eater Truck gameplay"><source src="../content/MobileGames/eater-truck.mp4" type="video/mp4"></video><figcaption>Eater Truck</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Pufferfish Blast gameplay"><source src="../content/MobileGames/pufferfish-blast.mp4" type="video/mp4"></video><figcaption>Pufferfish Blast</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Reveal Monsters gameplay"><source src="../content/MobileGames/reveal-monsters.mp4" type="video/mp4"></video><figcaption>Reveal Monsters</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Story Solitaire Match gameplay"><source src="../content/MobileGames/story-solitaire-match.mp4" type="video/mp4"></video><figcaption>Story Solitaire Match</figcaption></figure>
+      <figure><video muted loop playsinline preload="metadata" aria-label="Taxi Jam 3D gameplay"><source src="../content/MobileGames/taxi-jam-3d.mp4" type="video/mp4"></video><figcaption>Taxi Jam 3D</figcaption></figure>
+    </section>
+    <div class="project-actions"><a class="project-button" href="https://apps.apple.com/tr/developer/fatih-metehan-erden/id1563567629" target="_blank" rel="noopener">View released games</a></div>
+  </main>
+  <script>
+    const clips = document.querySelectorAll(".project-media--videos video");
+    const clipObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { rootMargin: "120px 0px", threshold: 0.1 });
+    clips.forEach((clip) => clipObserver.observe(clip));
+  </script>
+</body>
+</html>

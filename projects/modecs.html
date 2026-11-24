@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MODECS | Ahmet Mete ÇOM</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../style/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../style/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="../style/fonts/webfont-raleway/webfont-raleway.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <nav class="project-nav"><a href="../index.html#realizations">← Portfolio</a><a href="../index.html">Ahmet Mete ÇOM</a></nav>
+  <main class="project-page">
+    <header><p class="project-kicker">Portfolio</p><h1>MODECS</h1><p class="project-lead">An Entity Component System library written in Odin to explore data-oriented game development.</p></header>
+    <section class="project-game"><iframe src="../games/modecs/?embed=1" title="MODECS playable ECS demo" allow="autoplay; fullscreen" allowfullscreen></iframe></section>
+    <p class="project-note">Mouse to move. Dodge red balls and eat blue food. Your personal best is saved in this browser.</p>
+    <section class="project-copy"><h2>The project</h2><p>The demo uses MODECS for movement, collisions, food collection, and timed effects. The library handles entity identities and component storage; each game defines its own components, systems, and execution order.</p><h2>How the ECS works</h2><p>Entities are lightweight handles with an index and generation counter, so an old handle can be distinguished from a new entity reusing the same index. Components are plain data stored in generic sparse-set pools. Dense arrays keep active data together, while a sparse array maps entity indices to component slots. Components can be added and removed at runtime, with swap-removal keeping the dense arrays packed.</p><h2>Systems and lifecycle</h2><p>Systems are ordinary procedures called in an explicit order from the game loop. A movement system, for example, iterates Velocity components and looks up Position components for the same entities. Destruction can be marked during updates and processed afterward, removing components before recycling the entity index.</p><h2>Running on this website</h2><p>The Odin game is compiled to WebAssembly and linked with raylib using Emscripten. Raylib supplies graphics, input, and audio, while WebGL renders the game in the browser. A small HTML and JavaScript page schedules frames and saves the personal best using localStorage. It is served as static files through GitHub Pages without a game server.</p></section>
+    <div class="project-actions"><a class="project-button" href="https://github.com/windwalkerranger/Modecs" target="_blank" rel="noopener">View source on GitHub</a></div>
+  </main>
+</body>
+</html>

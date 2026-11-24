@@ -3020,6 +3020,14 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   width: 100%;
 }
 
+.realizations .rslides_tabs {
+  position: static;
+  float: none;
+  width: auto;
+  margin: 10px 0 0 7px;
+  text-align: left;
+}
+
 .realizations .showcase__stage-wrapper {
   position: relative;
   min-width: 0;
@@ -3083,17 +3091,32 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   float: none;
   clear: both;
   width: 100%;
-  margin-top: 34px;
+  margin-top: 18px;
   text-align: left;
 }
 
 .realizations .showcase__title {
   padding-left: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 14px;
+  border-bottom: 0;
   font-size: 26px;
+}
+
+.realizations .showcase__divider {
+  clear: both;
+  height: 2px;
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .realizations .showcase__point {
   padding-left: 0;
+}
+
+.realizations .showcase__point ~ .showcase__point {
+  display: none;
 }
 
 .realizations .showcase__point-title {
