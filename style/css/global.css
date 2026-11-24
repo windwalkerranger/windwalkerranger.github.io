@@ -2981,10 +2981,36 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
   }
 }
 
+.header[hidden] {
+  display: none;
+}
+
+.hero__social-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  color: #fff;
+  font-size: 26px;
+}
+
+.hero__social-links a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+}
+
+.hero__social-links a:hover,
+.hero__social-links a:focus-visible {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
 /*------------------------------------*    Portfolio layout
 \*------------------------------------*/
 .realizations__wrapper {
-  padding-top: 72px;
+  padding-top: 24px;
   padding-bottom: 55px;
 }
 
