@@ -144,6 +144,21 @@ h1 {
   line-height: 1.75;
 }
 
+.project-copy p + p {
+  margin-top: 18px;
+}
+
+.project-inline-link {
+  color: #7ddcff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.project-inline-link:hover,
+.project-inline-link:focus {
+  color: #c7f1ff;
+}
+
 .project-actions {
   display: flex;
   flex-wrap: wrap;
