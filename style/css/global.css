@@ -2986,6 +2986,7 @@ p, h1, h2, h3, h4, h5, h6, ul, li {
 }
 
 .hero__social-links {
+  clear: both;
   display: flex;
   justify-content: center;
   gap: 12px;
